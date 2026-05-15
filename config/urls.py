@@ -1,14 +1,8 @@
+# config/urls.py
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from store.views.health import health_check
-
-router = DefaultRouter()
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include([
-        path('health/', health_check),
-        path('', include(router.urls)),
-    ])),
+    path('admin/', admin.site.code),
+    path('api/', include('store.urls')),
 ]
